@@ -1,0 +1,28 @@
+org: duterte
+app: aws-node-http-api-project
+service: serverless-framework-tutorial
+frameworkVersion: '2'
+configValidationMode: error
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+  region: ap-southeast-1
+  profile: serverless-framework-tutorial
+  stackName: serverless-framework-tutorial
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+resources:
+  Resources:
+    ServerlessFrameworkTutorial:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: german-ochea-serverless-framework-tutorial-12358
