@@ -1,4 +1,3 @@
-org: duterte
 app: aws-node-http-api-project
 service: serverless-framework-tutorial
 frameworkVersion: '2'
