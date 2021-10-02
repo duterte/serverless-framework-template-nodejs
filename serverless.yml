@@ -10,7 +10,11 @@ provider:
   lambdaHashingVersion: '20201221'
   region: ap-southeast-1
   profile: serverless-framework-tutorial
-  stackName: serverless-framework-tutorial
+  apiName: ${self:service}
+  stackName: ${self:service}
+  deploymentBucket:
+    name: german12358-serverless-framework-bucket
+    serverSideEncryption: AES256
 
 functions:
   hello:
@@ -19,10 +23,9 @@ functions:
       - httpApi:
           path: /
           method: get
-
-resources:
-  Resources:
-    ServerlessFrameworkTutorial:
-      Type: AWS::S3::Bucket
-      Properties:
-        BucketName: german-ochea-serverless-framework-tutorial-12358
+# resources:
+#   Resources:
+#     ServerlessFrameworkTutorial:
+#       Type: AWS::S3::Bucket
+#       Properties:
+#         BucketName: german-ochea-serverless-framework-tutorial-12358

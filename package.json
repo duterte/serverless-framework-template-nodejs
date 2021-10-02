@@ -1,0 +1,15 @@
+{
+  "name": "serverless-framework-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/duterte/serverless-framework-template-nodejs.git",
+  "author": "Duterte <ochea.duterte@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "serverless": "^2.60.3"
+  },
+  "scripts": {
+    "deploy" : "serverless deploy"
+  }
+}
