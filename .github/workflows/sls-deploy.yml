@@ -14,5 +14,5 @@ jobs:
           node-version: '14.x'
       - run: npm install -g serverless
       - run: echo hello
-      - run: serverless config credentials --provider aws --key ${{ secret.aws_access_key_id }} --secret ${{ aws_secret_access_key }} --profile serverless-framework-tutorial
+      - run: serverless config credentials --provider aws --key ${{ secret.aws_access_key_id }} --secret ${{ secret.aws_secret_access_key }} --profile serverless-framework-tutorial
       - run: serverless deploy --verbose
