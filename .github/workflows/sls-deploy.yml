@@ -7,9 +7,6 @@ on:
 jobs:
   deploy:
   runs-on: windows-latest
-  strategy:
-    matrix:
-      node-version: [14.x]
 
   steps:
     - name: checkout
@@ -17,8 +14,7 @@ jobs:
     - name: User Node.js version ${{ node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ node-version }}
-        cache: 'npm'
+        node-version: 14.x
     - run: npm install -g serverless
     - run: serverless config credentials --provider aws --key ${{ secret.aws_access_key_id }} --secret ${{ secret.aws_secret_access_key }} --profile serverlesss-framework-tutorial
     - run: serverless deploy
